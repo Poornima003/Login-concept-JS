@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+</head>
+<body>
+    <div>
+        <input style="text-align: right;" type="button" value="logout" id="logout" onclick="logout()">
+        <h2 id="welcome">Welcome</h2>
+    </div>
+</body>
+<script>
+    if(localStorage.getItem('username')){
+        welcome.innerHTML= `Welcome ${localStorage.getItem('username')}`
+    }else{
+        alert("login please")
+        window.location = 'index.html'
+    }
+
+    function logout(){
+        localStorage.removeItem("username")
+        localStorage.removeItem("password")
+        window.location = 'index.html'
+    }
+</script>
+</html>
